@@ -11,6 +11,5 @@ namespace olderTask.Models
         public string subject { get; set; }
         public int price { get; set; }
         public DateTime date { get; set; }
-        
     }
 }
