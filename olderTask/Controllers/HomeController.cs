@@ -25,12 +25,7 @@ namespace olderTask.Controllers
         {
             DB = DATEDB;
         }
-        //private readonly IpickRepository _olderRepository;
-        //public HomeController(IpickRepository olderRepository)
-        //{
-        //    _olderRepository = olderRepository;
-        //}
-
+  
         public ViewResult index()
         {
             var result = DB.Olders.OrderByDescending(x => x.id).ToList();

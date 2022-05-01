@@ -439,8 +439,8 @@
         </div>
     </aside>
     @model List<Order>
-    <section class="content page-calendar">
-
+<section class="content page-calendar">
+     
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12">
                 <div class="card">
@@ -462,36 +462,37 @@
                                 </thead>
                                 <tbody>
 
-                                    <form asp-action="PushPainds" method="post">
+                                    <form id="form_validation" method="POST">
                                         @foreach (var item in Model)
                                         {
-                                            <form id="form_validation" method="POST">
-                                    <tr>
-                                        <td>@item.id</td>
-                                        <td>@item.FirstName</td>
-                                        <td>@item.Email</td>
-                                        <td>@item.OrderPlaced</td>
-                                        <td>
-                                            <button class="btn btn-danger " type="submit" value="Complete order"><i>paind</i></button>
-                                            <button class="btn btn-outline-success"><i>approved</i></button>
-                                            <button class="btn btn-outline-danger "><i>rejected</i></button>
-                                            <button class="btn btn-success "><i>finish</i></button>
+                                            
+<tr>
+                                            <td>@item.id</td>
+                                            <td>@item.FirstName</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.OrderPlaced</td>
+                                            <td>
+                                                <a class="btn btn-danger " ><i>paind</i></a>
+                                                <button class="btn btn-outline-success"><i>approved</i></button>
+                                                <button class="btn btn-outline-danger "><i>rejected</i></button>
+                                                <button class="btn btn-success "><i>finish</i></button>
 
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
+       
+    }
                                         </form>
-                                    }
-                                       </form>
-                                   
-                                    </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+
+                                        </tbody>
+                                        </table>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+     
+                                    </section>
 
     <!-- Default Size -->
     <div class="modal fade" id="addevent" tabindex="-1" role="dialog">

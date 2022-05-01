@@ -41,12 +41,6 @@ namespace olderTask.Controllers
             return View(result);
         }
   
-        public ViewResult main_olderPage()
-        {
-            
-            var result =DB.Olders.OrderByDescending(x => x.id).ToList();
-            return View(result);
-        }
         public IActionResult olders_List()
         {
             return View();

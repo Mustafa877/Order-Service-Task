@@ -18,16 +18,16 @@ namespace olderTask.Data.Repositories
         private readonly ShoppingCart _shoppingCart;
 
 
-        public ImangerRepository(DBCOUNT appDbContext, ShoppingCart shoppingCart)
+        public ImangerRepository(DBCOUNT appDbContext )
         {
             _appDbContext = appDbContext;
-            _shoppingCart = shoppingCart;
+            
         }
 
 
         public void CreateOrder(all all)
         {
-             
+
             _appDbContext.allUseers.Add(all);
 
             var shoppingCartItems = _shoppingCart.ShoppingCartItems;
@@ -39,7 +39,7 @@ namespace olderTask.Data.Repositories
                     id = all.id,
                     FirstName = all.Name,
                     Email = all.Email,
-                     
+
                 };
 
                 _appDbContext.Order.Add(orderDetail);

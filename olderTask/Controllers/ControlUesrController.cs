@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using olderTask.Data.Interfaces;
+using olderTask.Data.Repositories;
 using olderTask.Models;
 using olderTask.Models.ControlUesrs;
 using System;
@@ -12,11 +13,17 @@ namespace olderTask.Controllers
     public class ControlUesrController : Controller
     {
         private mangerRepository _mangerRepository;
+
+        public ControlUesrController(ImangerRepository mangerRepository)
+        {
+            _mangerRepository = mangerRepository;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
-
+       
         [HttpPost]
         ////[Authorize]
         public IActionResult PushRejected(rejected rejected)
@@ -53,7 +60,7 @@ namespace olderTask.Controllers
         }
         public IActionResult PushPainds(painds painds)
         {
-
+            
             _mangerRepository.CreateOrder(painds);
 
             return RedirectToAction("/Task/admindashbord");

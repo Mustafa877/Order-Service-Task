@@ -25,5 +25,6 @@ namespace olderTask.Models
         public DbSet<rejected> Rejecteds { get; set; }
         public DbSet<finish> Finishes { get; set; }
         public DbSet<painds> Painds { get; set; }
+       
     }
 }

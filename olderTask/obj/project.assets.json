@@ -8974,11 +8974,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\phoenix Co.Task\\New folder\\olderTask\\olderTask\\olderTask.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\phoenix Co.Task\\olderTask\\olderTask\\olderTask.csproj",
       "projectName": "olderTask",
-      "projectPath": "C:\\Users\\ACER\\Desktop\\phoenix Co.Task\\New folder\\olderTask\\olderTask\\olderTask.csproj",
+      "projectPath": "C:\\Users\\ACER\\Desktop\\phoenix Co.Task\\olderTask\\olderTask\\olderTask.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\Desktop\\phoenix Co.Task\\New folder\\olderTask\\olderTask\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\Desktop\\phoenix Co.Task\\olderTask\\olderTask\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

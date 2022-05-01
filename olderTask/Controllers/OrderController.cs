@@ -23,7 +23,7 @@ namespace olderTask.Controllers
             _shoppingCart = shoppingCart;
         }
 
-        //[Authorize]
+        [Authorize]
         public IActionResult Checkout()
         {
             return View();
@@ -31,7 +31,7 @@ namespace olderTask.Controllers
 
        
         [HttpPost]
-        ////[Authorize]
+        [Authorize]
         public IActionResult Checkout(Order order)
         {
             var items = _shoppingCart.GetShoppingCartItems();
