@@ -1,0 +1,71 @@
+﻿@model Order
+<!doctype html>
+<html class="no-js " lang="en">
+
+<!-- Mirrored from www.wrraptheme.com/templates/alpino/main/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 22:10:53 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+
+    <title>:: Alpino :: Form Validation</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/color_skins.css">
+</head>
+<body class="theme-black">
+    <!-- Page Loader -->
+  
+    <section class="content">
+        <form asp-action="Checkout" method="post" class="form-horizontal" role="form">
+            <!-- Basic Validation -->
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Check</strong> out</h2>
+
+                        </div>
+                        <div class="body">
+                            <form id="form_validation" method="POST">
+
+                                <div class="form-group form-float">
+                                    <label asp-for="FirstName" class="col-md-2 control-label"></label>
+                                    <input asp-for="FirstName" class="form-control" placeholder="Name">
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group form-float">
+                                    <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+                                    <input asp-for="PhoneNumber" class="form-control" placeholder="PhoneNumber" >
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                <div class="form-group form-float">
+                                    <label asp-for="Email" class="col-md-2 control-label"></label>
+                                    <input asp-for="Email" class="form-control" placeholder="Email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                                <button class="btn btn-raised btn-primary btn-round waves-effect" type="submit" value="Complete order">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+</section>
+
+    <!-- Jquery Core Js -->
+    <script src="~/assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+    <script src="~/assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+
+    <script src="~/assets/plugins/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css -->
+    <script src="~/assets/plugins/jquery-steps/jquery.steps.js"></script> <!-- JQuery Steps Plugin Js -->
+
+    <script src="~/assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+    <script src="~/assets/js/pages/forms/form-validation.js"></script>
+</body>
+
+<!-- Mirrored from www.wrraptheme.com/templates/alpino/main/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 15 Mar 2022 22:10:53 GMT -->
+</html>

@@ -1,0 +1,16 @@
+﻿@using olderTask.ViewModels
+@model ShoppingCartViewModel
+
+@if (Model.ShoppingCart.ShoppingCartItems.Count > 0)
+{
+    <li>
+        <a asp-controller="ShoppingCart">
+            <span data-node-type="commerce-cart-open-link" class="w-commerce-commercecartopenlink cart-button w-inline-block"><img src="https://assets.website-files.com/5ee9f92bf64b277c9feaf4d3/5f310bebe283349f470855e0_Cart Icon.svg"></span>
+            <span id="cart-status">
+                @Model.ShoppingCart.ShoppingCartItems.Count
+            </span>
+        </a>
+    </li>
+}
+
+
