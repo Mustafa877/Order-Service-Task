@@ -450,15 +450,6 @@ C:\Users\ACER\Desktop\phoenix Co.Task\New folder\olderTask\olderTask\obj\Debug\n
 C:\Users\ACER\Desktop\phoenix Co.Task\New folder\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.csproj.CopyComplete
 C:\Users\ACER\Desktop\phoenix Co.Task\New folder\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.genruntimeconfig.cache
 C:\Users\ACER\Desktop\phoenix Co.Task\New folder\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.csproj.AssemblyReference.cache
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.csproj.AssemblyReference.cache
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.AssemblyInfoInputs.cache
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.AssemblyInfo.cs
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.csproj.CoreCompileInputs.cache
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.RazorAssemblyInfo.cache
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.RazorAssemblyInfo.cs
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\bin\Debug\netcoreapp3.1\olderTask.StaticWebAssets.xml
@@ -859,6 +850,14 @@ C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\bin\Debug\netcoreapp3.
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.AssemblyInfo.cs
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.RazorAssemblyInfo.cache
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.RazorAssemblyInfo.cs
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\staticwebassets\olderTask.StaticWebAssets.Manifest.cache
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\staticwebassets\olderTask.StaticWebAssets.xml
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.TagHelpers.input.cache
@@ -874,11 +873,6 @@ C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\Home\index.cshtml.g.cs
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\OLDERS\Create.cshtml.g.cs
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\OLDERS\Delete.cshtml.g.cs
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\OLDERS\Details.cshtml.g.cs
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\OLDERS\Edit.cshtml.g.cs
-C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\OLDERS\Index.cshtml.g.cs
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\Order\CheckoutComplete.cshtml.g.cs
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ShoppingCartSummary\Default.cshtml.g.cs
@@ -902,3 +896,6 @@ C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.dll
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.pdb
 C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.genruntimeconfig.cache
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\olderTask.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\Subjects\Edit.cshtml.g.cs
+C:\Users\ACER\Desktop\phoenix Co.Task\olderTask\olderTask\obj\Debug\netcoreapp3.1\Razor\Views\Subjects\Index.cshtml.g.cs

@@ -33,18 +33,18 @@ namespace olderTask.Models
             return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
 
-        public void AddToCart(OLDERS older, int amount)
+        public void AddToCart(Subject Subject, int amount)
         {
             var shoppingCartItem =
                     _appDbContext.ShoppingCartItems.SingleOrDefault(
-                        s => s.OLDERS.id == older.id && s.ShoppingCartId == ShoppingCartId);
+                        s => s.Subject.id == Subject.id && s.ShoppingCartId == ShoppingCartId);
 
             if (shoppingCartItem == null)
             {
                 shoppingCartItem = new ShoppingCartItem
                 {
                     ShoppingCartId = ShoppingCartId,
-                    OLDERS = older,
+                    Subject = Subject,
                     Amount = 1
                 };
 
@@ -57,11 +57,11 @@ namespace olderTask.Models
             _appDbContext.SaveChanges();
         }
 
-        public int RemoveFromCart(OLDERS older)
+        public int RemoveFromCart(Subject Subject)
         {
             var shoppingCartItem =
                     _appDbContext.ShoppingCartItems.SingleOrDefault(
-                        s => s.OLDERS.id == older.id && s.ShoppingCartId == ShoppingCartId);
+                        s => s.Subject.id == Subject.id && s.ShoppingCartId == ShoppingCartId);
 
             var localAmount = 0;
 
@@ -88,7 +88,7 @@ namespace olderTask.Models
             return ShoppingCartItems ??
                    (ShoppingCartItems =
                        _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
-                           .Include(s => s.OLDERS)
+                           .Include(s => s.Subject)
                            .ToList());
         }
 
@@ -106,7 +106,7 @@ namespace olderTask.Models
         public decimal GetShoppingCartTotal()
         {
             var total = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
-                .Select(c => c.OLDERS.price * c.Amount).Sum();
+                .Select(c => c.Subject.price * c.Amount).Sum();
             return total;
         }
     }

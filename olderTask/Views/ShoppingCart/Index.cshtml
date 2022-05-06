@@ -593,13 +593,13 @@
                                                             <div class="media-body">
                                                                 <div class="product-name" data-title="Product">
                                                                     <h3 class="product-title font-size-base mb-2">
-                                                                        <a href="/Home/index/template/aquarium-a-website-template-for-aquarium-shops/ "> @line.OLDERS.subject </a>
+                                                                        <a href="/Home/index/template/aquarium-a-website-template-for-aquarium-shops/ "> @line.Subject.subject </a>
                                                                     </h3>
                                                                 </div>
                                                                 <div class="product-price font-size-base text-accent mb-2 mb-sm-0" data-title="Price">
-                                                                    <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"> @line.OLDERS.price.ToString("c") </bdi></span>
+                                                                    <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"> @line.Subject.price.ToString("c") </bdi></span>
                                                                 </div>
-                                                            </div>
+                                                            </div>S
                                                         </div>
                                                         <div class="pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left" style="width: 9rem;">
                                                             <div class="product-quantity" data-title="Quantity">
@@ -615,13 +615,13 @@
 
                                                         <div class="product-remove">
                                                             
-                                                            <a class="remove btn btn-link px-0 text-danger" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-OrderId="@line.OLDERS.id"><i class="czi-close-circle mr-2"></i><span class="font-size-sm">Remove</span></a>
+                                                            <a class="remove btn btn-link px-0 text-danger" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-OrderId="@line.Subject.id"><i class="czi-close-circle mr-2"></i><span class="font-size-sm">Remove</span></a>
                                                         </div>
 
                                                         </div>
                                                         <div class="d-flex justify-content-between align-items-center font-size-md mb-2 pb-1 cart-subtotal">
                                                             <span class="mr-2">Subtotal:</span>
-                                                            <span class="text-right" data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"></span>@((line.Amount * line.OLDERS.price).ToString("c"))</bdi></span></span>
+                                                            <span class="text-right" data-title="Subtotal"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"></span>@((line.Amount * line.Subject.price).ToString("c"))</bdi></span></span>
                                                         </div>
                                                     </div>
 

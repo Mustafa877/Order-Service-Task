@@ -16,7 +16,7 @@ namespace olderTask.Models
         {
         }
 
-        public DbSet<OLDERS> Olders { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }

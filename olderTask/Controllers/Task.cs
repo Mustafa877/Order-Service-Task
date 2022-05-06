@@ -37,7 +37,7 @@ namespace olderTask.Controllers
         }
         public IActionResult ViewSubject()
         {
-            var result = DB.Olders.OrderByDescending(x => x.id).ToList();
+            var result = DB.Subjects.OrderByDescending(x => x.id).ToList();
             return View(result);
         }
   
@@ -53,18 +53,6 @@ namespace olderTask.Controllers
            
 
         }
-        
-        public IActionResult Cart()
-        {
-            //OLDERS c = DB.Olders.Find(id);
-            //ViewBag.cat = c.subject;
-            //ViewBag.pr = c.price;
-            //var result = DB.Olders.OrderByDescending(x => x.id).ToList();
-            //return View(result);
-
-            return View();
-        }
-      
         public IActionResult Editsubject()
         {
             return View();
@@ -72,26 +60,19 @@ namespace olderTask.Controllers
         
         public IActionResult deleteSubject(int id)
         {
-            var subject = DB.Olders.Find(id);
-            DB.Olders.Remove(subject);
+            var subject = DB.Subjects.Find(id);
+            DB.Subjects.Remove(subject);
             DB.SaveChanges();
             return RedirectToAction("ViewSubject"); ;
         }
         [HttpPost]
-        public IActionResult savecountion(OLDERS model)
+        public IActionResult savecountion(Subject model)
         {
-            DB.Olders.Add(model);
+            DB.Subjects.Add(model);
             DB.SaveChanges();
             return RedirectToAction("AddSubject");
         }
-        [HttpPost]
-        //public IActionResult savetocart(cratdb model)
-        //{
-        //    DB.cratdbs.Add(model);
-        //    DB.SaveChanges();
-        //    return RedirectToAction("AddSubject");
-        //}
-
+       
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

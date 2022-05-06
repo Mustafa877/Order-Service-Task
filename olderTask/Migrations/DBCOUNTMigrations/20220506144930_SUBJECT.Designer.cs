@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using olderTask.Models;
 
 namespace olderTask.Migrations.DBCOUNTMigrations
 {
     [DbContext(typeof(DBCOUNT))]
-    partial class DBCOUNTModelSnapshot : ModelSnapshot
+    [Migration("20220506144930_SUBJECT")]
+    partial class SUBJECT
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

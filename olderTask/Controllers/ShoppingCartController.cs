@@ -40,7 +40,7 @@ namespace olderTask.Controllers
 
         public RedirectToActionResult AddToShoppingCart(int OrderId)
         {
-            var selectedOlder = _olderRepository.OLDERs.FirstOrDefault(p => p.id == OrderId);
+            var selectedOlder = _olderRepository.subjects.FirstOrDefault(p => p.id == OrderId);
             if (selectedOlder != null)
             {
                 _shoppingCart.AddToCart(selectedOlder, 1);
@@ -50,7 +50,7 @@ namespace olderTask.Controllers
 
         public RedirectToActionResult RemoveFromShoppingCart(int OrderId)
         {
-            var selectedolder = _olderRepository.OLDERs.FirstOrDefault(p => p.id == OrderId);
+            var selectedolder = _olderRepository.subjects.FirstOrDefault(p => p.id == OrderId);
             if (selectedolder != null)
             {
                 _shoppingCart.RemoveFromCart(selectedolder);

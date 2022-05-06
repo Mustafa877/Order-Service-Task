@@ -25,28 +25,28 @@ namespace olderTask.Data.Repositories
         }
 
 
-        public void CreateOrder(all all)
-        {
+        //public void CreateOrder(all all)
+        //{
 
-            _appDbContext.allUseers.Add(all);
+        //    _appDbContext.allUseers.Add(all);
 
-            var shoppingCartItems = _shoppingCart.ShoppingCartItems;
+        //    var shoppingCartItems = _shoppingCart.ShoppingCartItems;
 
-            foreach (var shoppingCartItem in shoppingCartItems)
-            {
-                var orderDetail = new Order()
-                {
-                    id = all.id,
-                    FirstName = all.Name,
-                    Email = all.Email,
+        //    foreach (var shoppingCartItem in shoppingCartItems)
+        //    {
+        //        var orderDetail = new Order()
+        //        {
+        //            id = all.id,
+        //            FirstName = all.Name,
+        //            Email = all.Email,
 
-                };
+        //        };
 
-                _appDbContext.Order.Add(orderDetail);
-            }
+        //        _appDbContext.Order.Add(orderDetail);
+        //    }
 
-            _appDbContext.SaveChanges();
-        }
+        //    _appDbContext.SaveChanges();
+        //}
         public void CreateOrder(rejected rejected)
         {
 
@@ -56,7 +56,7 @@ namespace olderTask.Data.Repositories
 
             foreach (var shoppingCartItem in shoppingCartItems)
             {
-                var orderDetail = new Order()
+                var Order = new Order()
                 {
                     id = rejected.id,
                     FirstName = rejected.Name,
@@ -64,77 +64,77 @@ namespace olderTask.Data.Repositories
 
                 };
 
-                _appDbContext.Order.Add(orderDetail);
+                _appDbContext.Order.Add(Order);
             }
 
             _appDbContext.SaveChanges();
         }
-        public void CreateOrder(painds painds)
-        {
+        //    public void CreateOrder(painds painds)
+        //    {
 
-            _appDbContext.Painds.Add(painds);
+        //        _appDbContext.Painds.Add(painds);
 
-            var shoppingCartItems = _shoppingCart.ShoppingCartItems;
+        //        var shoppingCartItems = _shoppingCart.ShoppingCartItems;
 
-            foreach (var shoppingCartItem in shoppingCartItems)
-            {
-                var orderDetail = new Order()
-                {
-                    id = painds.id,
-                    FirstName = painds.Name,
-                    Email = painds.Email,
+        //        foreach (var shoppingCartItem in shoppingCartItems)
+        //        {
+        //            var orderDetail = new Order()
+        //            {
+        //                id = painds.id,
+        //                FirstName = painds.Name,
+        //                Email = painds.Email,
 
-                };
+        //            };
 
-                _appDbContext.Order.Add(orderDetail);
-            }
+        //            _appDbContext.Order.Add(orderDetail);
+        //        }
 
-            _appDbContext.SaveChanges();
-        }
-        public void CreateOrder(approved approved)
-        {
+        //        _appDbContext.SaveChanges();
+        //    }
+        //    public void CreateOrder(approved approved)
+        //    {
 
-            _appDbContext.Approveds.Add(approved);
+        //        _appDbContext.Approveds.Add(approved);
 
-            var shoppingCartItems = _shoppingCart.ShoppingCartItems;
+        //        var shoppingCartItems = _shoppingCart.ShoppingCartItems;
 
-            foreach (var shoppingCartItem in shoppingCartItems)
-            {
-                var orderDetail = new Order()
-                {
-                    id = approved.id,
-                    FirstName = approved.Name,
-                    Email = approved.Email,
+        //        foreach (var shoppingCartItem in shoppingCartItems)
+        //        {
+        //            var orderDetail = new Order()
+        //            {
+        //                id = approved.id,
+        //                FirstName = approved.Name,
+        //                Email = approved.Email,
 
-                };
+        //            };
 
-                _appDbContext.Order.Add(orderDetail);
-            }
+        //            _appDbContext.Order.Add(orderDetail);
+        //        }
 
-            _appDbContext.SaveChanges();
-        }
-        public void CreateOrder(finish finish)
-        {
+        //        _appDbContext.SaveChanges();
+        //    }
+        //    public void CreateOrder(finish finish)
+        //    {
 
-            _appDbContext.Finishes.Add(finish);
+        //        _appDbContext.Finishes.Add(finish);
 
-            var shoppingCartItems = _shoppingCart.ShoppingCartItems;
+        //        var shoppingCartItems = _shoppingCart.ShoppingCartItems;
 
-            foreach (var shoppingCartItem in shoppingCartItems)
-            {
-                var orderDetail = new Order()
-                {
-                    id = finish.id,
-                    FirstName = finish.Name,
-                    Email = finish.Email,
+        //        foreach (var shoppingCartItem in shoppingCartItems)
+        //        {
+        //            var orderDetail = new Order()
+        //            {
+        //                id = finish.id,
+        //                FirstName = finish.Name,
+        //                Email = finish.Email,
 
-                };
+        //            };
 
-                _appDbContext.Order.Add(orderDetail);
-            }
+        //            _appDbContext.Order.Add(orderDetail);
+        //        }
 
-            _appDbContext.SaveChanges();
-        }
+        //        _appDbContext.SaveChanges();
+        //    }
     }
 
 }

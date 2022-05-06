@@ -9,9 +9,9 @@ namespace olderTask.Data.Interfaces
 {
     public interface pickRepository
     {
-        public IEnumerable<OLDERS> OLDERs { get; }
+        public IEnumerable<Subject> subjects { get; }
 
-        public  OLDERS GetolderById(int OLDERSId);
+        public  Subject GetolderById(int subjectId);
        
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using olderTask.Models;
 
 namespace olderTask.Migrations.DBCOUNTMigrations
 {
     [DbContext(typeof(DBCOUNT))]
-    partial class DBCOUNTModelSnapshot : ModelSnapshot
+    [Migration("20220506140300_FOROLDERSDELAESID")]
+    partial class FOROLDERSDELAESID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,6 +111,27 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.ToTable("Rejecteds");
                 });
 
+            modelBuilder.Entity("olderTask.Models.OLDERS", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Olders");
+                });
+
             modelBuilder.Entity("olderTask.Models.Order", b =>
                 {
                     b.Property<int>("id")
@@ -151,23 +174,23 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<int>("OLDERSId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Orderid")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("SubjectId")
-                        .HasColumnType("int");
-
                     b.Property<string>("subject")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
-                    b.HasIndex("Orderid");
+                    b.HasIndex("OLDERSId");
 
-                    b.HasIndex("SubjectId");
+                    b.HasIndex("Orderid");
 
                     b.ToTable("OrderDetail");
                 });
@@ -182,58 +205,37 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<int?>("OLDERSid")
+                        .HasColumnType("int");
+
                     b.Property<string>("ShoppingCartId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Subjectid")
-                        .HasColumnType("int");
-
                     b.HasKey("ShoppingCartItemId");
 
-                    b.HasIndex("Subjectid");
+                    b.HasIndex("OLDERSid");
 
                     b.ToTable("ShoppingCartItems");
                 });
 
-            modelBuilder.Entity("olderTask.Models.Subject", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("price")
-                        .HasColumnType("int");
-
-                    b.Property<string>("subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Subjects");
-                });
-
             modelBuilder.Entity("olderTask.Models.OrderDetail", b =>
                 {
+                    b.HasOne("olderTask.Models.OLDERS", "oLDERS")
+                        .WithMany()
+                        .HasForeignKey("OLDERSId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("olderTask.Models.Order", "Order")
                         .WithMany("OrderLines")
                         .HasForeignKey("Orderid");
-
-                    b.HasOne("olderTask.Models.Subject", "Subjects")
-                        .WithMany()
-                        .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("olderTask.Models.ShoppingCartItem", b =>
                 {
-                    b.HasOne("olderTask.Models.Subject", "Subject")
+                    b.HasOne("olderTask.Models.OLDERS", "OLDERS")
                         .WithMany()
-                        .HasForeignKey("Subjectid");
+                        .HasForeignKey("OLDERSid");
                 });
 #pragma warning restore 612, 618
         }

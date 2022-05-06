@@ -14,7 +14,7 @@ namespace DrinkAndGo.Data.Repositories
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<OLDERS> OLDERs => _appDbContext.Olders.Include(c => c);
-        public OLDERS GetolderById(int OLDERSId) => _appDbContext.Olders.FirstOrDefault(p => p.id == OLDERSId);
+        public IEnumerable<Subject> subjects => _appDbContext.Subjects.Include(c => c);
+        public Subject GetolderById(int subjectId) => _appDbContext.Subjects.FirstOrDefault(p => p.id == subjectId);
     }
 }

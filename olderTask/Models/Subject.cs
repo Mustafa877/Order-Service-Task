@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace olderTask.Models
 {
-    public class OLDERS
+    public class Subject
     {
         public int id { get; set; }
         public string subject { get; set; }

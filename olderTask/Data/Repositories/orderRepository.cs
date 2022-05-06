@@ -37,10 +37,10 @@ namespace olderTask.Data.Repositories
                 var orderDetail = new OrderDetail()
                 {
                     Amount = shoppingCartItem.Amount,
-                    OLDERSId = shoppingCartItem.OLDERS.id,
-                    subject = shoppingCartItem.OLDERS.subject,
+                    SubjectId = shoppingCartItem.Subject.id,
+                    subject = shoppingCartItem.Subject.subject,
                     id  = order.id,
-                    Price = shoppingCartItem.OLDERS.price
+                    Price = shoppingCartItem.Subject.price
                 };
 
                 _appDbContext.OrderDetail.Add(orderDetail);

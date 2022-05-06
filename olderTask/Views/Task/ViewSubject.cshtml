@@ -493,7 +493,7 @@
                                     </thead>
                                     <tbody>
 
-                                        @model List<OLDERS>
+                                        @model List<Subject>
 
                                         @foreach (var item in Model)
                                         {
@@ -508,7 +508,7 @@
                                                 <td>@item.date</td>
                                                 <td>
 
-                                                    <a class="btn btn-icon btn-neutral btn-icon-mini margin-0" href="/OLDERS/Edit/@item.id"><i class="zmdi zmdi-edit"> </i></a>
+                                                    <a class="btn btn-icon btn-neutral btn-icon-mini margin-0" href="/Subjects/Edit/@item.id"><i class="zmdi zmdi-edit"> </i></a>
                                                     @*<button class="btn btn-icon btn-neutral btn-icon-mini margin-0"><i class="zmdi zmdi-edit"> </i></button>*@
                                                     @*<a class="btn btn-danger" href="/Task/deleteSubject/@item.id">del</a>*@
                                                     <a class="btn btn-icon btn-neutral btn-icon-mini margin-0" href="/Task/deleteSubject/@item.id"><i class="zmdi zmdi-delete"></i></a>
