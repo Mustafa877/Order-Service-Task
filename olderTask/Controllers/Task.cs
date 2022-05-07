@@ -37,7 +37,7 @@ namespace olderTask.Controllers
         }
         public IActionResult ViewSubject()
         {
-            var result = DB.Subjects.OrderByDescending(x => x.id).ToList();
+            var result = DB.Subjects.OrderByDescending(x => x.Subjectid).ToList();
             return View(result);
         }
   
@@ -48,7 +48,7 @@ namespace olderTask.Controllers
         }
         public IActionResult oldermanger()
         {
-            var result = DB.Order.OrderByDescending(x => x.id).ToList();
+            var result = DB.Orders.OrderByDescending(x => x.OrderId).ToList();
             return View(result);
            
 

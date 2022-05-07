@@ -8,8 +8,9 @@ namespace olderTask.Models
 {
     public class OrderDetail
     {
-        //public int OrderDetailid { get; set; }
-        public int id { get; set; }
+       
+        public int OrderDetailId { get; set; }
+        public int OrderId { get; set; }
         public int SubjectId { get; set; }
         public int Amount { get; set; }
         public string subject { get; set; }

@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace olderTask.Migrations.DBCOUNTMigrations
+namespace olderTask.Migrations
 {
-    public partial class o : Migration
+    public partial class _1G : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,21 +47,6 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Finishes", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Olders",
-                columns: table => new
-                {
-                    id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    subject = table.Column<string>(nullable: true),
-                    price = table.Column<int>(nullable: false),
-                    date = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Olders", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -110,12 +95,56 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Subjects",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    subject = table.Column<string>(nullable: true),
+                    price = table.Column<int>(nullable: false),
+                    date = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subjects", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderDetail",
+                columns: table => new
+                {
+                    OrderDetailId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderId = table.Column<int>(nullable: false),
+                    SubjectId = table.Column<int>(nullable: false),
+                    Amount = table.Column<int>(nullable: false),
+                    subject = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderDetail", x => x.OrderDetailId);
+                    table.ForeignKey(
+                        name: "FK_OrderDetail_Order_OrderId",
+                        column: x => x.OrderId,
+                        principalTable: "Order",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderDetail_Subjects_SubjectId",
+                        column: x => x.SubjectId,
+                        principalTable: "Subjects",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ShoppingCartItems",
                 columns: table => new
                 {
                     ShoppingCartItemId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OLDERSid = table.Column<int>(nullable: true),
+                    Subjectid = table.Column<int>(nullable: true),
                     Amount = table.Column<int>(nullable: false),
                     ShoppingCartId = table.Column<string>(nullable: true)
                 },
@@ -123,57 +152,27 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                 {
                     table.PrimaryKey("PK_ShoppingCartItems", x => x.ShoppingCartItemId);
                     table.ForeignKey(
-                        name: "FK_ShoppingCartItems_Olders_OLDERSid",
-                        column: x => x.OLDERSid,
-                        principalTable: "Olders",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "OrderDetail",
-                columns: table => new
-                {
-                    id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderDetailid = table.Column<int>(nullable: false),
-                    OLDERSId = table.Column<int>(nullable: false),
-                    Amount = table.Column<int>(nullable: false),
-                    subject = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false),
-                    Orderid = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderDetail", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_OrderDetail_Olders_OLDERSId",
-                        column: x => x.OLDERSId,
-                        principalTable: "Olders",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OrderDetail_Order_Orderid",
-                        column: x => x.Orderid,
-                        principalTable: "Order",
+                        name: "FK_ShoppingCartItems_Subjects_Subjectid",
+                        column: x => x.Subjectid,
+                        principalTable: "Subjects",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetail_OLDERSId",
+                name: "IX_OrderDetail_OrderId",
                 table: "OrderDetail",
-                column: "OLDERSId");
+                column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetail_Orderid",
+                name: "IX_OrderDetail_SubjectId",
                 table: "OrderDetail",
-                column: "Orderid");
+                column: "SubjectId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShoppingCartItems_OLDERSid",
+                name: "IX_ShoppingCartItems_Subjectid",
                 table: "ShoppingCartItems",
-                column: "OLDERSid");
+                column: "Subjectid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -203,7 +202,7 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                 name: "Order");
 
             migrationBuilder.DropTable(
-                name: "Olders");
+                name: "Subjects");
         }
     }
 }

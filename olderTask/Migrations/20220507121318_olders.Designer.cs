@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using olderTask.Models;
 
-namespace olderTask.Migrations.DBCOUNTMigrations
+namespace olderTask.Migrations
 {
     [DbContext(typeof(DBCOUNT))]
-    [Migration("20220501122221_s")]
-    partial class s
+    [Migration("20220507121318_olders")]
+    partial class olders
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,30 +111,9 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.ToTable("Rejecteds");
                 });
 
-            modelBuilder.Entity("olderTask.Models.OLDERS", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("price")
-                        .HasColumnType("int");
-
-                    b.Property<string>("subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Olders");
-                });
-
             modelBuilder.Entity("olderTask.Models.Order", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -159,14 +138,14 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("OrderId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("olderTask.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("OrderDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -174,26 +153,23 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int>("OLDERSId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderDetailid")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Orderid")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
+
                     b.Property<string>("subject")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("OrderDetailId");
 
-                    b.HasIndex("OLDERSId");
+                    b.HasIndex("OrderId");
 
-                    b.HasIndex("Orderid");
+                    b.HasIndex("SubjectId");
 
                     b.ToTable("OrderDetail");
                 });
@@ -208,76 +184,60 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OLDERSid")
-                        .HasColumnType("int");
-
                     b.Property<string>("ShoppingCartId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Subjectid")
+                        .HasColumnType("int");
+
                     b.HasKey("ShoppingCartItemId");
 
-                    b.HasIndex("OLDERSid");
+                    b.HasIndex("Subjectid");
 
                     b.ToTable("ShoppingCartItems");
                 });
 
-            modelBuilder.Entity("olderTask.Models.mangerdetail", b =>
+            modelBuilder.Entity("olderTask.Models.Subject", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Subjectid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Orderid")
+                    b.Property<DateTime>("date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("price")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Paindsid")
-                        .HasColumnType("int");
+                    b.Property<string>("subject")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("email")
-                        .HasColumnType("int");
+                    b.HasKey("Subjectid");
 
-                    b.Property<int>("name")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("Orderid");
-
-                    b.HasIndex("Paindsid");
-
-                    b.ToTable("mangerdetails");
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("olderTask.Models.OrderDetail", b =>
                 {
-                    b.HasOne("olderTask.Models.OLDERS", "oLDERS")
-                        .WithMany()
-                        .HasForeignKey("OLDERSId")
+                    b.HasOne("olderTask.Models.Order", "Order")
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("olderTask.Models.Order", "Order")
-                        .WithMany("OrderLines")
-                        .HasForeignKey("Orderid");
+                    b.HasOne("olderTask.Models.Subject", "Subjects")
+                        .WithMany()
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("olderTask.Models.ShoppingCartItem", b =>
                 {
-                    b.HasOne("olderTask.Models.OLDERS", "OLDERS")
+                    b.HasOne("olderTask.Models.Subject", "Subject")
                         .WithMany()
-                        .HasForeignKey("OLDERSid");
-                });
-
-            modelBuilder.Entity("olderTask.Models.mangerdetail", b =>
-                {
-                    b.HasOne("olderTask.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("Orderid");
-
-                    b.HasOne("olderTask.Models.ControlUesrs.painds", "Painds")
-                        .WithMany()
-                        .HasForeignKey("Paindsid");
+                        .HasForeignKey("Subjectid");
                 });
 #pragma warning restore 612, 618
         }

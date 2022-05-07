@@ -45,11 +45,8 @@ namespace olderTask
                 options.UseSqlServer(
                     Configuration.GetConnectionString("oldersTask")));
 
-        //   services.AddIdentity<DBCOUNT, IdentityRole>()
-        //.AddEntityFrameworkStores<ApplicationDbContext>()
-        //.AddDefaultTokenProviders();
-
-            services.AddTransient<IpickRepository, IpickRepository>();
+           
+            services.AddTransient<ISubjectRepository, SubjectRepository>();
             services.AddTransient<IOrderRepository, orderRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace olderTask.Data.Interfaces
 {
-    public interface pickRepository
+    public interface ISubjectRepository
     {
         public IEnumerable<Subject> subjects { get; }
 
-        public  Subject GetolderById(int subjectId);
+        public  Subject GetSubjectById(int subjectId);
        
     }
 }

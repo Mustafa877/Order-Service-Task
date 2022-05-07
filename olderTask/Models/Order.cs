@@ -12,7 +12,7 @@ namespace olderTask.Models
     {
 
         [BindNever]
-        public int id { get; set; }
+        public int OrderId { get; set; }
 
         public List<OrderDetail> OrderLines { get; set; }
 

@@ -37,7 +37,7 @@ namespace olderTask.Models
         {
             var shoppingCartItem =
                     _appDbContext.ShoppingCartItems.SingleOrDefault(
-                        s => s.Subject.id == Subject.id && s.ShoppingCartId == ShoppingCartId);
+                        s => s.Subject.Subjectid == Subject.Subjectid && s.ShoppingCartId == ShoppingCartId);
 
             if (shoppingCartItem == null)
             {
@@ -61,7 +61,7 @@ namespace olderTask.Models
         {
             var shoppingCartItem =
                     _appDbContext.ShoppingCartItems.SingleOrDefault(
-                        s => s.Subject.id == Subject.id && s.ShoppingCartId == ShoppingCartId);
+                        s => s.Subject.Subjectid == Subject.Subjectid && s.ShoppingCartId == ShoppingCartId);
 
             var localAmount = 0;
 

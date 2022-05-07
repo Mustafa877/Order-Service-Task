@@ -12,12 +12,12 @@ namespace olderTask.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        private readonly IpickRepository _olderRepository;
+        private readonly ISubjectRepository _SubjectRepository;
         private readonly ShoppingCart _shoppingCart;
 
-        public ShoppingCartController(IpickRepository olderRepository, ShoppingCart shoppingCart)
+        public ShoppingCartController(ISubjectRepository SubjectRepository, ShoppingCart shoppingCart)
         {
-            _olderRepository = olderRepository;
+            _SubjectRepository = SubjectRepository;
             _shoppingCart = shoppingCart;
         }
 
@@ -38,9 +38,9 @@ namespace olderTask.Controllers
         }
 
 
-        public RedirectToActionResult AddToShoppingCart(int OrderId)
+        public RedirectToActionResult AddToShoppingCart(int subjectId)
         {
-            var selectedOlder = _olderRepository.subjects.FirstOrDefault(p => p.id == OrderId);
+            var selectedOlder = _SubjectRepository.subjects.FirstOrDefault(p => p.Subjectid == subjectId);
             if (selectedOlder != null)
             {
                 _shoppingCart.AddToCart(selectedOlder, 1);
@@ -48,9 +48,9 @@ namespace olderTask.Controllers
             return RedirectToAction("Index");
         }
 
-        public RedirectToActionResult RemoveFromShoppingCart(int OrderId)
+        public RedirectToActionResult RemoveFromShoppingCart(int subjectId)
         {
-            var selectedolder = _olderRepository.subjects.FirstOrDefault(p => p.id == OrderId);
+            var selectedolder = _SubjectRepository.subjects.FirstOrDefault(p => p.Subjectid == subjectId);
             if (selectedolder != null)
             {
                 _shoppingCart.RemoveFromCart(selectedolder);

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using olderTask.Models;
 
-namespace olderTask.Migrations.DBCOUNTMigrations
+namespace olderTask.Migrations
 {
     [DbContext(typeof(DBCOUNT))]
-    partial class DBCOUNTModelSnapshot : ModelSnapshot
+    [Migration("20220506234601_2g")]
+    partial class _2g
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,7 +113,7 @@ namespace olderTask.Migrations.DBCOUNTMigrations
 
             modelBuilder.Entity("olderTask.Models.Order", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -136,14 +138,14 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("OrderId");
 
                     b.ToTable("Order");
                 });
 
             modelBuilder.Entity("olderTask.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("OrderDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -151,7 +153,7 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Orderid")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -163,9 +165,9 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<string>("subject")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("OrderDetailId");
 
-                    b.HasIndex("Orderid");
+                    b.HasIndex("OrderId");
 
                     b.HasIndex("SubjectId");
 
@@ -220,7 +222,9 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                 {
                     b.HasOne("olderTask.Models.Order", "Order")
                         .WithMany("OrderLines")
-                        .HasForeignKey("Orderid");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("olderTask.Models.Subject", "Subjects")
                         .WithMany()

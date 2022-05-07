@@ -58,13 +58,13 @@ namespace olderTask.Data.Repositories
             {
                 var Order = new Order()
                 {
-                    id = rejected.id,
+                    OrderId = rejected.id,
                     FirstName = rejected.Name,
                     Email = rejected.Email,
 
                 };
 
-                _appDbContext.Order.Add(Order);
+                _appDbContext.Orders.Add(Order);
             }
 
             _appDbContext.SaveChanges();

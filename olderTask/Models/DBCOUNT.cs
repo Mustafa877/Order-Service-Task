@@ -18,7 +18,7 @@ namespace olderTask.Models
 
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
         public DbSet<all> allUseers { get; set; }
         public DbSet<approved> Approveds { get; set; }

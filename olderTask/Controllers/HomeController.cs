@@ -28,7 +28,7 @@ namespace olderTask.Controllers
   
         public ViewResult index()
         {
-            var result = DB.Subjects.OrderByDescending(x => x.id).ToList();
+            var result = DB.Subjects.OrderByDescending(x => x.Subjectid).ToList();
             return View(result);
             //return View();
         }

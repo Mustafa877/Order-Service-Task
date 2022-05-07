@@ -599,7 +599,7 @@
                                                                 <div class="product-price font-size-base text-accent mb-2 mb-sm-0" data-title="Price">
                                                                     <span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"> @line.Subject.price.ToString("c") </bdi></span>
                                                                 </div>
-                                                            </div>S
+                                                            </div>
                                                         </div>
                                                         <div class="pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left" style="width: 9rem;">
                                                             <div class="product-quantity" data-title="Quantity">
@@ -615,7 +615,7 @@
 
                                                         <div class="product-remove">
                                                             
-                                                            <a class="remove btn btn-link px-0 text-danger" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-OrderId="@line.Subject.id"><i class="czi-close-circle mr-2"></i><span class="font-size-sm">Remove</span></a>
+                                                            <a class="remove btn btn-link px-0 text-danger" asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-subjectId="@line.Subject.Subjectid"><i class="czi-close-circle mr-2"></i><span class="font-size-sm">Remove</span></a>
                                                         </div>
 
                                                         </div>
@@ -652,7 +652,7 @@
 
                                                                 <div class="order-total text-center border-top pt-4 mt-4">
                                                                     <h3 class="font-weight-normal mb-0" data-title="Total">
-                                                                        <strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"></span> @Model.ShoppingCartTotal.ToString("c")</bdi></span></strong>
+                                                                        <strong> @Model.ShoppingCartTotal.ToString("c") </strong>
                                                                     </h3>
                                                                 </div>
 

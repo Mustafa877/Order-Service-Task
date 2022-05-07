@@ -495,7 +495,7 @@
                                         @foreach (var item in Model)
                                         {
                                             <tr>
-                                                <td>@item.id</td>
+                                                <td>@item.Subjectid</td>
                                                 @*<td>Airi Satou</td>*@
                                                 @*<td>Angelica Ramos</td>*@
                                                 <td>airi example.com</td>
@@ -505,10 +505,10 @@
                                                 <td>@item.date</td>
                                                 <td>
 
-                                                    <a class="btn btn-icon btn-neutral btn-icon-mini margin-0" href="/OLDERS/Edit/@item.id"><i class="zmdi zmdi-edit"> </i></a>
+                                                    <a class="btn btn-icon btn-neutral btn-icon-mini margin-0" href="/OLDERS/Edit/@item.Subjectid"><i class="zmdi zmdi-edit"> </i></a>
                                                     @*<button class="btn btn-icon btn-neutral btn-icon-mini margin-0"><i class="zmdi zmdi-edit"> </i></button>*@
                                                     @*<a class="btn btn-danger" href="/Task/deleteSubject/@item.id">del</a>*@
-                                                    <a class="btn btn-icon btn-neutral btn-icon-mini margin-0" href="/Task/deleteSubject/@item.id"><i class="zmdi zmdi-delete"></i></a>
+                                                    <a class="btn btn-icon btn-neutral btn-icon-mini margin-0" href="/Task/deleteSubject/@item.Subjectid"><i class="zmdi zmdi-delete"></i></a>
                                                 </td>
                                             </tr>
                                         }

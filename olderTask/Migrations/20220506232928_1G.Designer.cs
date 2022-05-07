@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using olderTask.Models;
 
-namespace olderTask.Migrations.DBCOUNTMigrations
+namespace olderTask.Migrations
 {
     [DbContext(typeof(DBCOUNT))]
-    [Migration("20220506144930_SUBJECT")]
-    partial class SUBJECT
+    [Migration("20220506232928_1G")]
+    partial class _1G
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -145,7 +145,7 @@ namespace olderTask.Migrations.DBCOUNTMigrations
 
             modelBuilder.Entity("olderTask.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("OrderDetailId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -153,7 +153,7 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Orderid")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -165,9 +165,9 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                     b.Property<string>("subject")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("OrderDetailId");
 
-                    b.HasIndex("Orderid");
+                    b.HasIndex("OrderId");
 
                     b.HasIndex("SubjectId");
 
@@ -222,7 +222,9 @@ namespace olderTask.Migrations.DBCOUNTMigrations
                 {
                     b.HasOne("olderTask.Models.Order", "Order")
                         .WithMany("OrderLines")
-                        .HasForeignKey("Orderid");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("olderTask.Models.Subject", "Subjects")
                         .WithMany()

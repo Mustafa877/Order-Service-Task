@@ -28,7 +28,7 @@ namespace olderTask.Data.Repositories
         {
             order.OrderPlaced = DateTime.Now;
 
-            _appDbContext.Order.Add(order);
+            _appDbContext.Orders.Add(order);
 
             var shoppingCartItems = _shoppingCart.ShoppingCartItems;
 
@@ -37,9 +37,9 @@ namespace olderTask.Data.Repositories
                 var orderDetail = new OrderDetail()
                 {
                     Amount = shoppingCartItem.Amount,
-                    SubjectId = shoppingCartItem.Subject.id,
+                    SubjectId = shoppingCartItem.Subject.Subjectid,
                     subject = shoppingCartItem.Subject.subject,
-                    id  = order.id,
+                    OrderId = order.OrderId,
                     Price = shoppingCartItem.Subject.price
                 };
 

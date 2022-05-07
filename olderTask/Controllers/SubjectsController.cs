@@ -46,9 +46,9 @@ namespace olderTask.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,subject,price,date")] Subject subjectS)
+        public async Task<IActionResult> Edit(int id, [Bind("Subjectid,subject,price,date")] Subject subjectS)
         {
-            if (id != subjectS.id)
+            if (id != subjectS.Subjectid)
             {
                 return NotFound();
             }
@@ -62,7 +62,7 @@ namespace olderTask.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SubjectExists(subjectS.id))
+                    if (!SubjectExists(subjectS.Subjectid))
                     {
                         return NotFound();
                     }
@@ -79,7 +79,7 @@ namespace olderTask.Controllers
         
         private bool SubjectExists(int id)
         {
-            return _context.Subjects.Any(e => e.id == id);
+            return _context.Subjects.Any(e => e.Subjectid == id);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace olderTask.Models
 {
     public class Subject
     {
-        public int id { get; set; }
+        public int Subjectid { get; set; }
         public string subject { get; set; }
         public int price { get; set; }
         public DateTime date { get; set; }

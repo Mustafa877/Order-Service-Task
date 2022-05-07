@@ -426,45 +426,45 @@
         @model List<Subject>
        
 
-        <section id="services" class="serzvices">
+    <section id="services" class="services">
 
-            <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-                <header class="section-header">
-                    <h2>Services</h2>
-                    <p>Veritatis et dolores facere numquam et praesentium</p>
-                </header>
-                
-                    <div class="row gy-4">
+            <header class="section-header">
+                <h2>Services</h2>
+                <p>Veritatis et dolores facere numquam et praesentium</p>
+            </header>
 
-                        @foreach (var item in Model)
-                        {
-                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+          
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
 
-                                <div class="service-box blue">
-                                    <i class="ri-discuss-line icon"></i>
-                                    <h3>@item.subject</h3>
-                                    <p>$@item.price.ToString("00.00")</p>
-                                    <div class="addToCart text-right">
-                                        <p class="button ">
-                                            <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-OrderId="@item.id">
-                                                Add to cart
-                                                <i class="bi bi-arrow-right"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    @*<a href="#" class="read-more"><span>Add to Cart </span> <i class="bi bi-arrow-right"></i></a>*@
-                                </div>
-
+                        <div class="service-box blue">
+                            <i class="ri-discuss-line icon"></i>
+                            <h3>@item.subject</h3>
+                            <p>$@item.price.ToString("00.00")</p>
+                            <div class="addToCart text-right">
+                                <p class="button ">
+                                    <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-subjectId="@item.Subjectid">
+                                        Add to cart
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </p>
                             </div>
-                        }
+                            @*<a href="#" class="read-more"><span>Add to Cart </span> <i class="bi bi-arrow-right"></i></a>*@
+                        </div>
 
                     </div>
-                
+                }
 
             </div>
 
-        </section> @*End Services Section*@
+
+        </div>
+
+    </section> @*End Services Section*@
 
 
 
