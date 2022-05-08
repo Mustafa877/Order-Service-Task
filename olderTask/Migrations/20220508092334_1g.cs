@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace olderTask.Migrations
 {
-    public partial class _1G : Migration
+    public partial class _1g : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,10 +50,10 @@ namespace olderTask.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Order",
+                name: "Orders",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    OrderId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(maxLength: 50, nullable: false),
                     PhoneNumber = table.Column<string>(nullable: false),
@@ -63,7 +63,7 @@ namespace olderTask.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Order", x => x.id);
+                    table.PrimaryKey("PK_Orders", x => x.OrderId);
                 });
 
             migrationBuilder.CreateTable(
@@ -98,7 +98,7 @@ namespace olderTask.Migrations
                 name: "Subjects",
                 columns: table => new
                 {
-                    id = table.Column<int>(nullable: false)
+                    Subjectid = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     subject = table.Column<string>(nullable: true),
                     price = table.Column<int>(nullable: false),
@@ -106,35 +106,36 @@ namespace olderTask.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subjects", x => x.id);
+                    table.PrimaryKey("PK_Subjects", x => x.Subjectid);
                 });
 
             migrationBuilder.CreateTable(
                 name: "OrderDetail",
                 columns: table => new
                 {
-                    OrderDetailId = table.Column<int>(nullable: false)
+                    id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderId = table.Column<int>(nullable: false),
+                    OrderDetailId = table.Column<int>(nullable: false),
                     SubjectId = table.Column<int>(nullable: false),
                     Amount = table.Column<int>(nullable: false),
                     subject = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false)
+                    Price = table.Column<decimal>(nullable: false),
+                    OrderId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderDetail", x => x.OrderDetailId);
+                    table.PrimaryKey("PK_OrderDetail", x => x.id);
                     table.ForeignKey(
-                        name: "FK_OrderDetail_Order_OrderId",
+                        name: "FK_OrderDetail_Orders_OrderId",
                         column: x => x.OrderId,
-                        principalTable: "Order",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalTable: "Orders",
+                        principalColumn: "OrderId",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_OrderDetail_Subjects_SubjectId",
                         column: x => x.SubjectId,
                         principalTable: "Subjects",
-                        principalColumn: "id",
+                        principalColumn: "Subjectid",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -155,7 +156,7 @@ namespace olderTask.Migrations
                         name: "FK_ShoppingCartItems_Subjects_Subjectid",
                         column: x => x.Subjectid,
                         principalTable: "Subjects",
-                        principalColumn: "id",
+                        principalColumn: "Subjectid",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -199,7 +200,7 @@ namespace olderTask.Migrations
                 name: "ShoppingCartItems");
 
             migrationBuilder.DropTable(
-                name: "Order");
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Subjects");

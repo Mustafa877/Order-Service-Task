@@ -10,8 +10,8 @@ using olderTask.Models;
 namespace olderTask.Migrations
 {
     [DbContext(typeof(DBCOUNT))]
-    [Migration("20220506234601_2g")]
-    partial class _2g
+    [Migration("20220508092334_1g")]
+    partial class _1g
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -140,12 +140,12 @@ namespace olderTask.Migrations
 
                     b.HasKey("OrderId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("olderTask.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("OrderDetailId")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -153,7 +153,10 @@ namespace olderTask.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int>("OrderDetailId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -165,7 +168,7 @@ namespace olderTask.Migrations
                     b.Property<string>("subject")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("OrderDetailId");
+                    b.HasKey("id");
 
                     b.HasIndex("OrderId");
 
@@ -199,7 +202,7 @@ namespace olderTask.Migrations
 
             modelBuilder.Entity("olderTask.Models.Subject", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Subjectid")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -213,7 +216,7 @@ namespace olderTask.Migrations
                     b.Property<string>("subject")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Subjectid");
 
                     b.ToTable("Subjects");
                 });
@@ -222,9 +225,7 @@ namespace olderTask.Migrations
                 {
                     b.HasOne("olderTask.Models.Order", "Order")
                         .WithMany("OrderLines")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrderId");
 
                     b.HasOne("olderTask.Models.Subject", "Subjects")
                         .WithMany()
